@@ -1,0 +1,9 @@
+# Robots.txt for alexisobi.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://alexisobi.com/sitemap.xml
+
+# Disallow admin or private paths
+Disallow: /.DS_Store
