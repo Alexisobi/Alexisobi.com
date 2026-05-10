@@ -1,6 +1,5 @@
 /* ===== ALEXIS OBI — DESIGN SYSTEM ===== */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
-@import url('https://fonts.cdnfonts.com/css/brittany-signature');
+/* Fonts loaded via <link> in HTML for non-render-blocking performance */
 
 :root {
   --color-primary: #1a1a1a;
@@ -90,6 +89,90 @@ ul {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 60px);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.mt-sm { margin-top: 12px; }
+.mt-md { margin-top: 20px; }
+.mt-lg { margin-top: 40px; }
+.text-center { text-align: center; }
+
+.mobile-nav-social {
+  margin-top: 20px;
+}
+
+.page-hero-subtitle {
+  max-width: 520px;
+  margin: 16px auto 0;
+}
+
+.blog-subtitle {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: #7a7a7a;
+  max-width: 100%;
+  margin: 16px auto 0;
+}
+
+.blog-featured-section--compact {
+  padding: 20px 0 0;
+}
+
+.blog-featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.blog-featured-date {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filters-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  color: #7a7a7a;
+  margin-right: 16px;
+}
+
+.cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.gallery-grid-section--dark {
+  background: #000;
+}
+
+.footer-back-link {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  margin-top: 8px;
+  display: inline-block;
+}
+
+/* ===== SVG ICON STYLES ===== */
+.icon-svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+  display: inline-block;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -1448,4 +1531,49 @@ p {
 /* ISO Footer override */
 .iso-footer .footer-brand {
   letter-spacing: 0.1em;
+}
+
+/* ===== PRINT STYLESHEET ===== */
+@media print {
+  .site-header,
+  .mobile-nav,
+  .skip-link,
+  .site-footer,
+  .hero-cta-group,
+  .cta-group,
+  .gallery-marquee,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
 }

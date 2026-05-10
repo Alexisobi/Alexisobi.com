@@ -8,6 +8,8 @@
     <meta name="description"
         content="Personal lifestyle blog and portfolio of Alexis Obi. Exploring fashion, beauty, food, tech, and everything in between.">
     <meta name="theme-color" content="#1a1a1a">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data:; script-src 'self';">
     <link rel="canonical" href="https://alexisobi.com/">
 
     <!-- Open Graph -->
@@ -31,15 +33,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 
-    <!-- Preconnect for performance -->
+    <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/brittany-signature">
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="images/portrait-main.jpg">
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLGPg8YJ04IY6YHCTKkWrRFA0tDJ9Nf5VF8FB7+W1eYgX9v0jMHhJMIA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -60,6 +64,8 @@
         }
     }
     </script>
+
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 
 <body>
@@ -79,11 +85,9 @@
                 <a href="shop.html">Shop</a>
             </nav>
             <div class="header-social">
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 122.8z"/></svg></a>
+                <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8s-26.8-12-26.8-26.8 12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9S362 33.5 326.1 31.8c-37-2.1-147.9-2.1-184.9 0C105.4 33.5 73.6 41.7 47.3 67.9S11.5 120.3 9.9 156.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2s34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8z"/></svg></a>
+                <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zm-46.4-340a53.8 53.8 0 110-107.6 53.8 53.8 0 010 107.6zm394.1 340h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg></a>
             </div>
             <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
                 <div class="bar"></div>
@@ -101,10 +105,10 @@
         <a href="gallery.html">Gallery</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="shop.html">Shop</a>
-        <div class="header-social" style="margin-top: 20px;">
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <div class="header-social mobile-nav-social">
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 122.8z"/></svg></a>
+            <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8s-26.8-12-26.8-26.8 12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9S362 33.5 326.1 31.8c-37-2.1-147.9-2.1-184.9 0C105.4 33.5 73.6 41.7 47.3 67.9S11.5 120.3 9.9 156.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2s34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8z"/></svg></a>
+            <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zm-46.4-340a53.8 53.8 0 110-107.6 53.8 53.8 0 010 107.6zm394.1 340h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg></a>
         </div>
     </nav>
 
@@ -152,8 +156,7 @@
                                 <span class="post-card-date">June 5, 2024</span>
                             </div>
                             <h3><a href="blog.html">Restauranting in London, a pic your food affair</a></h3>
-                            <p>Exploring London's best eateries through the lens of someone who always photographs their
-                                plate first.</p>
+                            <p>Exploring London's best eateries through the lens of someone who always photographs their plate first.</p>
                             <a href="blog.html" class="read-more">Read More</a>
                         </div>
                     </article>
@@ -168,16 +171,14 @@
                                 <span class="post-card-date">June 5, 2024</span>
                             </div>
                             <h3><a href="blog.html">Entry-Level Engineer</a></h3>
-                            <p>A deep dive into the evolving world of networking and what it means for our connected
-                                future.</p>
+                            <p>A deep dive into the evolving world of networking and what it means for our connected future.</p>
                             <a href="blog.html" class="read-more">Read More</a>
                         </div>
                     </article>
 
                     <article class="post-card reveal">
                         <div class="post-card-image">
-                            <a href="blog.html"><img src="images/skin-hacks.jpg"
-                                    alt="Skin hacks article" width="600" height="450" loading="lazy" decoding="async"></a>
+                            <a href="blog.html"><img src="images/skin-hacks.jpg" alt="Skin hacks article" width="600" height="450" loading="lazy" decoding="async"></a>
                         </div>
                         <div class="post-card-body">
                             <div class="post-card-meta">
@@ -204,13 +205,11 @@
                         <span class="section-label">About Me</span>
                         <h2>I'm Alexis Obi</h2>
                         <p>At my core, I'm a creative soul with a love for fashion, beauty, travel, and technology. My "day
-                            job"? I'm a
-                            computer engineering student, an entrepreneur and a content creator. When I clock out, I'm on my
-                            1,004 hobbies,
-                            curating my experiences, and documenting them here.</p>
+                            job"? I'm a computer engineering student, an entrepreneur and a content creator. When I clock out,
+                            I'm on my 1,004 hobbies, curating my experiences, and documenting them here.</p>
                         <p>This space is where all of my worlds collide: lifestyle musings, professional insights, and
                             everything beautiful in between.</p>
-                        <a href="portfolio.html" class="btn btn-accent" style="margin-top: 12px;">Learn More</a>
+                        <a href="portfolio.html" class="btn btn-accent mt-sm">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -240,7 +239,7 @@
                 <div class="gallery-marquee-item"><img src="images/skin-hacks.jpg" alt="Skin hacks" width="320" height="427" loading="lazy" decoding="async"></div>
                 <div class="gallery-marquee-item"><img src="images/lifestyle-balance.jpg" alt="Lifestyle balance" width="320" height="427" loading="lazy" decoding="async"></div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
+            <div class="text-center mt-lg">
                 <a href="gallery.html" class="btn btn-outline">View Full Gallery</a>
             </div>
         </section>
@@ -253,8 +252,7 @@
             <div class="footer-inner">
                 <div>
                     <div class="footer-brand">Alexis Obi</div>
-                    <p class="footer-text">Fashion, beauty, food, tech, and the stories in between. Welcome to my corner
-                        of the internet.</p>
+                    <p class="footer-text">Fashion, beauty, food, tech, and the stories in between. Welcome to my corner of the internet.</p>
                 </div>
                 <div>
                     <div class="footer-heading">Navigate</div>
@@ -266,22 +264,21 @@
                         <a href="shop.html">Shop</a>
                     </div>
                 </div>
-                <div>
+                <address>
                     <div class="footer-heading">Connect</div>
                     <div class="footer-links">
                         <a href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
                         <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer">Instagram</a>
                         <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
-                </div>
+                </address>
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2026 Alexis Obi. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 122.8z"/></svg></a>
+                    <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8s-26.8-12-26.8-26.8 12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9S362 33.5 326.1 31.8c-37-2.1-147.9-2.1-184.9 0C105.4 33.5 73.6 41.7 47.3 67.9S11.5 120.3 9.9 156.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2s34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8z"/></svg></a>
+                    <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zm-46.4-340a53.8 53.8 0 110-107.6 53.8 53.8 0 010 107.6zm394.1 340h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg></a>
                 </div>
             </div>
         </div>

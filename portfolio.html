@@ -7,6 +7,7 @@
     <title>Portfolio — Alexis Obi</title>
     <meta name="description" content="Professional portfolio and consultation services by Alexis Obi. Electrical engineering, tech consulting, and hair consultation.">
     <meta name="theme-color" content="#1a1a1a">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data:; script-src 'self';">
     <link rel="canonical" href="https://alexisobi.com/portfolio.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Portfolio & Services — Alexis Obi">
@@ -23,11 +24,11 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/brittany-signature">
+    
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLGPg8YJ04IY6YHCTKkWrRFA0tDJ9Nf5VF8FB7+W1eYgX9v0jMHhJMIA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 
 <body>
@@ -44,9 +45,9 @@
                 <a href="shop.html">Shop</a>
             </nav>
             <div class="header-social">
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 122.8z"/></svg></a>
+                <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8s-26.8-12-26.8-26.8 12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9S362 33.5 326.1 31.8c-37-2.1-147.9-2.1-184.9 0C105.4 33.5 73.6 41.7 47.3 67.9S11.5 120.3 9.9 156.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2s34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8z"/></svg></a>
+                <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zm-46.4-340a53.8 53.8 0 110-107.6 53.8 53.8 0 010 107.6zm394.1 340h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg></a>
             </div>
             <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
                 <div class="bar"></div>
@@ -63,10 +64,10 @@
         <a href="gallery.html">Gallery</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="shop.html">Shop</a>
-        <div class="header-social" style="margin-top: 20px;">
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <div class="header-social mobile-nav-social">
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 122.8z"/></svg></a>
+            <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8s-26.8-12-26.8-26.8 12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9S362 33.5 326.1 31.8c-37-2.1-147.9-2.1-184.9 0C105.4 33.5 73.6 41.7 47.3 67.9S11.5 120.3 9.9 156.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2s34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8z"/></svg></a>
+            <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zm-46.4-340a53.8 53.8 0 110-107.6 53.8 53.8 0 010 107.6zm394.1 340h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg></a>
         </div>
     </nav>
 
@@ -75,7 +76,7 @@
             <div class="container">
                 <span class="section-label">What I Do</span>
                 <h1>Portfolio & Services</h1>
-                <p style="max-width: 520px; margin: 16px auto 0;">Professional services spanning engineering, technology, and beauty consultation.</p>
+                <p class="page-hero-subtitle">Professional services spanning engineering, technology, and beauty consultation.</p>
             </div>
         </section>
 
@@ -135,9 +136,9 @@
                         <h2>A Multi-Disciplinary Creative</h2>
                         <p>With a foundation in computer engineering and a passion for technology, I bring analytical thinking and creative problem-solving to everything I do.</p>
                         <p>My work spans diverse fields, yet my philosophy remains consistent: whether I am providing high-level tech strategy, architecting complex building electrical systems, or offering personalized consultations to help clients find their perfect hair match, I lead with curiosity and a genuine commitment to quality.</p>
-                        <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
+                        <div class="cta-group mt-md">
                             <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                                <svg class="icon-svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zm-46.4-340a53.8 53.8 0 110-107.6 53.8 53.8 0 010 107.6zm394.1 340h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg> LinkedIn
                             </a>
                             <a href="mailto:hello@alexisobi.com" class="btn btn-outline">Get in Touch</a>
                         </div>
@@ -176,9 +177,9 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 Alexis Obi. All rights reserved.</span>
                 <div class="footer-social">
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3v178.8A162.6 162.6 0 11185 188.3v89.9a74.6 74.6 0 1052.2 71.2V0h88a121 121 0 00122.8 122.8z"/></svg></a>
+                    <a href="https://www.instagram.com/alexisobii" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8s-26.8-12-26.8-26.8 12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9S362 33.5 326.1 31.8c-37-2.1-147.9-2.1-184.9 0C105.4 33.5 73.6 41.7 47.3 67.9S11.5 120.3 9.9 156.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2s34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8z"/></svg></a>
+                    <a href="https://www.linkedin.com/in/alexisobionIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zm-46.4-340a53.8 53.8 0 110-107.6 53.8 53.8 0 010 107.6zm394.1 340h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg></a>
                 </div>
             </div>
         </div>
