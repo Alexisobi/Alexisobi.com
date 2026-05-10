@@ -985,12 +985,26 @@ p {
   justify-content: center;
 }
 
-.blog-featured-body h2 {
-  margin-bottom: 16px;
+.blog-featured-body h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 12px;
 }
 
 .blog-featured-body p {
-  margin-bottom: 24px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.blog-featured-body .btn-tag {
+  padding: 4px 12px;
+  font-size: 0.6rem;
+}
+
+.blog-featured-body .btn {
+  padding: 10px 24px;
+  font-size: 0.7rem;
+  align-self: flex-start;
 }
 
 /* ===== SHOP SECTION ===== */
