@@ -12,22 +12,24 @@ export default function ScrollReveal() {
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-    // Use a small timeout to ensure the DOM has painted all elements
-    // for the new route before we select and observe them.
-    const timeout = setTimeout(() => {
-      const elements = document.querySelectorAll('.reveal');
-      elements.forEach((el) => {
-        // Reset visibility if returning to page
-        el.classList.remove('visible');
-        revealObserver.observe(el);
-      });
-    }, 50);
+    const observeElements = () => {
+      const elements = document.querySelectorAll('.reveal:not(.visible)');
+      elements.forEach((el) => revealObserver.observe(el));
+    };
+
+    // Initial observation
+    const timeout = setTimeout(observeElements, 50);
+
+    // Watch for DOM changes (like blog filtering) to observe new elements
+    const mutationObserver = new MutationObserver(observeElements);
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       clearTimeout(timeout);
       revealObserver.disconnect();
+      mutationObserver.disconnect();
     };
   }, [pathname]);
 
