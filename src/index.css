@@ -771,7 +771,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('images/hero-portrait.jpg') center/cover;
+  background: url('/images/hero-portrait.jpg') center/cover;
   opacity: 0.25;
   filter: grayscale(30%);
   animation: heroZoom 20s ease-in-out infinite alternate;
