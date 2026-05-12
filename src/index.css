@@ -994,8 +994,8 @@ p {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  max-height: 85vh;
-  min-height: 600px;
+  max-height: 75vh;
+  min-height: 500px;
 }
 
 .blog-featured-image {
