@@ -994,8 +994,8 @@ p {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  max-height: 65vh;
-  min-height: 400px;
+  max-height: 85vh;
+  min-height: 600px;
 }
 
 .blog-featured-image {
@@ -1314,6 +1314,11 @@ p {
 
   .blog-featured {
     grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .blog-featured-image {
+    min-height: 400px;
   }
 
   .blog-featured-body {
