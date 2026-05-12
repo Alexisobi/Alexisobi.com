@@ -1,11 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const ALL_POSTS = [
+    {
+        id: 1,
+        title: "Entry-Level Engineer",
+        category: "lifestyle",
+        tag: "Lifestyle",
+        date: "June 5, 2024",
+        excerpt: "A deep dive into the evolving world of networking and what it means for our connected future.",
+        image: "/images/tech-world.jpg"
+    },
+    {
+        id: 2,
+        title: "Skin hacks: Autumn shade vs Summer shade",
+        category: "beauty",
+        tag: "Beauty",
+        date: "June 5, 2024",
+        excerpt: "The ultimate guide to transitioning your skincare and makeup palette with the seasons.",
+        image: "/images/skin-hacks.jpg"
+    },
+    {
+        id: 3,
+        title: "The shirt that had the men bidding, a work story",
+        category: "fashion",
+        tag: "Fashion",
+        date: "June 5, 2024",
+        excerpt: "A workplace fashion moment that turned heads and started conversations.",
+        image: "/images/fashion-story.jpg"
+    },
+    {
+        id: 4,
+        title: "Finding balance: engineer by day, creative by night",
+        category: "lifestyle",
+        tag: "Lifestyle",
+        date: "May 11, 2025",
+        excerpt: "How I navigate the intersection of technical work and creative expression in my daily life.",
+        image: "/images/lifestyle-balance.jpg"
+    },
+    {
+        id: 5,
+        title: "Weekend wanderings: curating the perfect getaway",
+        category: "lifestyle",
+        tag: "Lifestyle",
+        date: "May 11, 2025",
+        excerpt: "My tried-and-tested formula for making the most of short trips and long weekends.",
+        image: "/images/weekend-wanderings.jpg"
+    },
+    {
+        id: 6,
+        title: "Hair extensions 101: a beginner's guide",
+        category: "beauty",
+        tag: "Beauty",
+        date: "April 20, 2025",
+        excerpt: "Everything you need to know about choosing, styling, and maintaining quality hair extensions.",
+        image: "/images/haircare.jpg"
+    }
+];
+
 export default function Blog() {
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filteredPosts = activeFilter === 'all' 
+    ? ALL_POSTS 
+    : ALL_POSTS.filter(post => post.category === activeFilter);
+
   return (
     <main id="main-content">
-
-        
         <section className="blog-hero">
             <div className="container">
                 <span className="section-label">The Blog</span>
@@ -13,7 +74,6 @@ export default function Blog() {
             </div>
         </section>
 
-        
         <section className="blog-featured-section blog-featured-section--compact">
             <div className="container">
                 <div className="blog-featured reveal">
@@ -35,114 +95,44 @@ export default function Blog() {
             </div>
         </section>
 
-        
         <section className="blog-list">
             <div className="container">
                 <div className="filters-container reveal">
                     <div className="font-script filters-heading">I'm looking for:</div>
                     <div className="blog-filters">
-                        <button className="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-                        <button className="filter-btn" data-filter="lifestyle" aria-pressed="false">Lifestyle</button>
-                        <button className="filter-btn" data-filter="travel" aria-pressed="false">Travel</button>
-                        <button className="filter-btn" data-filter="beauty" aria-pressed="false">Beauty</button>
-                        <button className="filter-btn" data-filter="fashion" aria-pressed="false">Fashion</button>
+                        {['all', 'lifestyle', 'travel', 'beauty', 'fashion'].map((filter) => (
+                            <button 
+                                key={filter}
+                                className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                                onClick={() => setActiveFilter(filter)}
+                                aria-pressed={activeFilter === filter}
+                            >
+                                {filter.charAt(0).toUpperCase() + filter.slice(1)}
+                            </button>
+                        ))}
                     </div>
                 </div>
 
                 <div className="posts-grid">
-                    <article className="post-card reveal" data-category="travel">
-                        <div className="post-card-image">
-                            <a href="#"><img src="/images/tech-world.jpg" alt="Entry-level engineer article" width="600" height="450" loading="lazy" decoding="async" /></a>
-                        </div>
-                        <div className="post-card-body">
-                            <div className="post-card-meta">
-                                <span className="btn-tag">Lifestyle</span>
-                                <span className="post-card-date">June 5, 2024</span>
+                    {filteredPosts.map((post) => (
+                        <article key={post.id} className="post-card reveal" data-category={post.category}>
+                            <div className="post-card-image">
+                                <a href="#"><img src={post.image} alt={post.title} width="600" height="450" loading="lazy" decoding="async" /></a>
                             </div>
-                            <h3><a href="#">Entry-Level Engineer</a></h3>
-                            <p>A deep dive into the evolving world of networking and what it means for our connected future.</p>
-                            <a href="#" className="read-more">Read More</a>
-                        </div>
-                    </article>
-
-                    <article className="post-card reveal" data-category="beauty">
-                        <div className="post-card-image">
-                            <a href="#"><img src="/images/skin-hacks.jpg" alt="Skin hacks — autumn vs summer shades" width="600" height="450" loading="lazy" decoding="async" /></a>
-                        </div>
-                        <div className="post-card-body">
-                            <div className="post-card-meta">
-                                <span className="btn-tag">Beauty</span>
-                                <span className="post-card-date">June 5, 2024</span>
+                            <div className="post-card-body">
+                                <div className="post-card-meta">
+                                    <span className="btn-tag">{post.tag}</span>
+                                    <span className="post-card-date">{post.date}</span>
+                                </div>
+                                <h3><a href="#">{post.title}</a></h3>
+                                <p>{post.excerpt}</p>
+                                <a href="#" className="read-more">Read More</a>
                             </div>
-                            <h3><a href="#">Skin hacks: Autumn shade vs Summer shade</a></h3>
-                            <p>The ultimate guide to transitioning your skincare and makeup palette with the seasons.</p>
-                            <a href="#" className="read-more">Read More</a>
-                        </div>
-                    </article>
-
-                    <article className="post-card reveal" data-category="fashion">
-                        <div className="post-card-image">
-                            <a href="#"><img src="/images/fashion-story.jpg" alt="Fashion story" width="600" height="450" loading="lazy" decoding="async" /></a>
-                        </div>
-                        <div className="post-card-body">
-                            <div className="post-card-meta">
-                                <span className="btn-tag">Fashion</span>
-                                <span className="post-card-date">June 5, 2024</span>
-                            </div>
-                            <h3><a href="#">The shirt that had the men bidding, a work story</a></h3>
-                            <p>A workplace fashion moment that turned heads and started conversations.</p>
-                            <a href="#" className="read-more">Read More</a>
-                        </div>
-                    </article>
-
-                    <article className="post-card reveal" data-category="lifestyle">
-                        <div className="post-card-image">
-                            <a href="#"><img src="/images/lifestyle-balance.jpg" alt="Finding balance" width="600" height="450" loading="lazy" decoding="async" /></a>
-                        </div>
-                        <div className="post-card-body">
-                            <div className="post-card-meta">
-                                <span className="btn-tag">Lifestyle</span>
-                                <span className="post-card-date">May 11, 2025</span>
-                            </div>
-                            <h3><a href="#">Finding balance: engineer by day, creative by night</a></h3>
-                            <p>How I navigate the intersection of technical work and creative expression in my daily life.</p>
-                            <a href="#" className="read-more">Read More</a>
-                        </div>
-                    </article>
-
-                    <article className="post-card reveal" data-category="lifestyle">
-                        <div className="post-card-image">
-                            <a href="#"><img src="/images/weekend-wanderings.jpg" alt="Weekend wanderings" width="600" height="450" loading="lazy" decoding="async" /></a>
-                        </div>
-                        <div className="post-card-body">
-                            <div className="post-card-meta">
-                                <span className="btn-tag">Lifestyle</span>
-                                <span className="post-card-date">May 11, 2025</span>
-                            </div>
-                            <h3><a href="#">Weekend wanderings: curating the perfect getaway</a></h3>
-                            <p>My tried-and-tested formula for making the most of short trips and long weekends.</p>
-                            <a href="#" className="read-more">Read More</a>
-                        </div>
-                    </article>
-
-                    <article className="post-card reveal" data-category="beauty">
-                        <div className="post-card-image">
-                            <a href="#"><img src="/images/haircare.jpg" alt="Hair extensions guide" width="600" height="450" loading="lazy" decoding="async" /></a>
-                        </div>
-                        <div className="post-card-body">
-                            <div className="post-card-meta">
-                                <span className="btn-tag">Beauty</span>
-                                <span className="post-card-date">April 20, 2025</span>
-                            </div>
-                            <h3><a href="#">Hair extensions 101: a beginner's guide</a></h3>
-                            <p>Everything you need to know about choosing, styling, and maintaining quality hair extensions.</p>
-                            <a href="#" className="read-more">Read More</a>
-                        </div>
-                    </article>
+                        </article>
+                    ))}
                 </div>
             </div>
         </section>
-
     </main>
   );
 }

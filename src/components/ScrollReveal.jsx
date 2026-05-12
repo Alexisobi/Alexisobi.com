@@ -12,7 +12,7 @@ export default function ScrollReveal() {
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     // Use a small timeout to ensure the DOM has painted all elements
     // for the new route before we select and observe them.

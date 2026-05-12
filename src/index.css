@@ -1005,7 +1005,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  flex-grow: 1;
 }
 
 .blog-featured-body h1 {
@@ -1236,6 +1236,7 @@ p {
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   will-change: opacity, transform;
+  -webkit-perspective: 1000px;
 }
 
 .reveal.visible {
